@@ -28,4 +28,4 @@ if test -d /etc/portage
 end
 
 setenv JAVA_HOME /opt/openjdk-bin-11.0.9_p11/
-set PATH /opt/npm-global/bin $PATH
+set PATH  ~/.local/bin/ $PATH /opt/local/flutter/bin
