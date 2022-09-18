@@ -1,0 +1,7 @@
+>sys-kernel/gentoo-kernel-5.15.32
+<sys-kernel/gentoo-kernel-5.15.32
+>virtual/dist-kernel-5.15.32
+<virtual/dist-kernel-5.15.32
+>sys-kernel/gentoo-sources-5.15.32-r1
+<sys-kernel/gentoo-sources-5.15.32-r1
+sys-kernel/gentoo-kernel-bin

@@ -1,0 +1,8 @@
+games-simulation/openttd ~amd64
+games-misc/openmsx ~amd64
+games-misc/opensfx ~amd64
+games-misc/opengfx ~amd64
+games-util/grfcodec ~amd64
+games-util/nml ~amd64
+games-util/catcodec ~amd64
+*/*::steam-overlay
