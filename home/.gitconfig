@@ -12,3 +12,8 @@
 	default = simple
 [core]
 	editor = vim
+[alias]
+	df = diff --ignore-all-space
+	ll = log --stat
+[pull]
+	rebase = false
