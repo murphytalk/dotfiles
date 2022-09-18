@@ -1,0 +1,17 @@
+# required by sys-kernel/linux-firmware (argument)
+sys-kernel/linux-firmware linux-fw-redistributable no-source-code
+# required by microsoft-edge-beta (argument)
+www-client/microsoft-edge-beta microsoft-edge
+# required by vscode (argument)
+app-editors/vscode Microsoft-vscode
+# required by icaclient (argument)
+net-misc/icaclient icaclient
+# required by dropbox (argument)
+net-misc/dropbox CC-BY-ND-3.0 dropbox
+# required by nvidia-drivers (argument)
+x11-drivers/nvidia-drivers NVIDIA-r2
+# required by idea-community (argument)
+dev-util/idea-community codehaus-classworlds
+app-office/wps-office WPS-EULA
+
+games-util/steam-launcher ValveSteamLicense
