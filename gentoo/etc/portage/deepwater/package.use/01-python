@@ -1,3 +1,0 @@
-#*/* PYTHON_TARGETS: -* python3_11
-#*/* PYTHON_SINGLE_TARGET: -* python3_11
-dev-python/ipython -qt5 -smp
