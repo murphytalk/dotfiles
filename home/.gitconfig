@@ -17,3 +17,8 @@
 	ll = log --stat
 [pull]
 	rebase = false
+[safe]
+	directory = /mnt/router-extra/work
+	directory = /mnt/router-extra/work/toolbox
+	directory = /mnt/router-extra/work/finance_scraper
+	directory = /mnt/router-extra/work/MyKBS

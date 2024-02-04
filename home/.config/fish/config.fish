@@ -2,8 +2,9 @@ if test -e $HOME/.alias
     source $HOME/.alias
 end
 
-if uname -r | grep -i microsoft >/dev/null
+if /usr/bin/uname -r | /bin/grep -i microsoft >/dev/null
     set WSL 1
+    setenv AWS_CPP_SDK_DIR /usr/local
 end
 
 if test -d /etc/portage
@@ -25,7 +26,10 @@ if test -d /etc/portage
         sudo umount $PORTFS
         set PORTFS
     end
-end
 
-setenv JAVA_HOME /opt/openjdk-bin-11.0.9_p11/
-set PATH  ~/.local/bin/ $PATH /opt/local/flutter/bin
+    setenv JAVA_HOME /opt/openjdk-bin-11.0.9_p11
+    setenv FLUTTER_HOME /mnt/extra/apps/flutter
+    setenv MY_ANDROID_SDK_HOME /mnt/extra/apps/android-sdk
+    setenv MY_ANDROID_NDK $MY_ANDROID_SDK_HOME/ndk-bundle/
+end
+set PATH  ~/.local/bin/ $FLUTTER_HOME/bin $MY_ANDROID_SDK_HOME/platform-tools/ $PATH

@@ -1,5 +1,5 @@
 [$Version]
-update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:animation-speed
+update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:animation-speed,kwin.upd:make-translucency-effect-disabled-by-default,kwin.upd:remove-flip-switch-effect,kwin.upd:remove-cover-switch-effect,kwin.upd:remove-cubeslide-effect,kwin.upd:remove-xrender-backend,kwin.upd:enable-scale-effect-by-default,kwin.upd:overview-group-plugin-id,kwin.upd:animation-speed-cleanup,kwin.upd:replace-cascaded-zerocornered
 
 [Compositing]
 OpenGLIsUnsafe=false
@@ -32,6 +32,25 @@ TabBox=false
 TabBoxAlternative=false
 
 [Effect-PresentWindows]
+BorderActivate=3
+BorderActivateAll=1
+BorderActivateClass=9
+
+[Effect-blur]
+BlurStrength=14
+BorderActivate=9
+BorderActivateCylinder=9
+BorderActivateSphere=9
+NoiseStrength=3
+TabBox=false
+TabBoxAlternative=false
+
+[Effect-desktopgrid]
+BorderActivate=9
+TabBox=false
+TabBoxAlternative=false
+
+[Effect-presentwindows]
 BorderActivate=3
 BorderActivateAll=1
 BorderActivateClass=9
@@ -257,6 +276,15 @@ MultiScreenMode=0
 ShowDesktopMode=0
 ShowTabBox=true
 SwitchingMode=0
+
+[Tiling]
+padding=4
+
+[Tiling][ac38ee1e-cd36-5042-832d-3fc1a629c105]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][edea8319-429f-554c-9cad-824541f46d11]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Windows]
 ElectricBorderCooldown=350
