@@ -22,3 +22,10 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 
 vim.opt.updatetime = 50
+
+-- append full path in status
+local current_statusline = vim.opt.statusline:get()
+vim.opt.statusline = current_statusline .. " %F"
+
+--vim.opt.autochdir = true
+

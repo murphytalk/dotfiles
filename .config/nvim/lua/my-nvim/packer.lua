@@ -22,7 +22,8 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
-
+  use('duane9/nvim-rg')
+  use('yorickpeterse/nvim-window')
 
   use {
       'VonHeikemen/lsp-zero.nvim',
