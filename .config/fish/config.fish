@@ -32,4 +32,4 @@ if test -d /etc/portage
     setenv MY_ANDROID_SDK_HOME /mnt/extra/apps/android-sdk
     setenv MY_ANDROID_NDK $MY_ANDROID_SDK_HOME/ndk-bundle/
 end
-set PATH  ~/.local/bin/ $FLUTTER_HOME/bin $MY_ANDROID_SDK_HOME/platform-tools/ $PATH
+set PATH  ~/.local/bin/ $FLUTTER_HOME/bin $MY_ANDROID_SDK_HOME/platform-tools/ /home/linuxbrew/.linuxbrew/bin $PATH
