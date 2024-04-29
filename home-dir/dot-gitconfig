@@ -1,3 +1,5 @@
 [user]
 	email = murphytalk@gmail.com
 	name = Mu Lu
+[alias]
+	ll = log --stat
