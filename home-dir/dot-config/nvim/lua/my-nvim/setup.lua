@@ -27,7 +27,14 @@ vim.opt.updatetime = 50
 local current_statusline = vim.opt.statusline:get()
 vim.opt.statusline = current_statusline .. " %F"
 
---vim.opt.autochdir = true
+vim.api.nvim_create_autocmd('TextYankPost',{
+    desc = 'Highlight when yanking text',
+    group = vim.api.nvim_create_augroup('highlight-yank',{clear = true}),
+    callback = function()
+        vim.highlight.on_yank()
+    end
+})
+
 --
 -- Toggle window zoom in Neovim
 local zoomed = false
