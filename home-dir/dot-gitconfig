@@ -3,3 +3,4 @@
 	name = Mu Lu
 [alias]
 	ll = log --stat
+	df = diff -b -w --ignore-blank-lines
