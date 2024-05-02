@@ -1,5 +1,6 @@
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+vim.api.nvim_set_keymap('n', '<C-p>', ':Telescope neovim-project discover<CR>', { noremap = true, silent = false })
 -- old emacs habit
 vim.api.nvim_set_keymap('n', '<C-x><C-f>', ':edit ', { noremap = true, silent = false })
 vim.api.nvim_set_keymap('n', '<C-x>0', ':bd<CR>', { noremap = true, silent = false })

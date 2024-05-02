@@ -29,6 +29,7 @@ vim.opt.statusline = current_statusline .. " %F"
 
 vim.api.nvim_create_autocmd('TextYankPost',{
     desc = 'Highlight when yanking text',
+    -- group to avoid duplicated listeners
     group = vim.api.nvim_create_augroup('highlight-yank',{clear = true}),
     callback = function()
         vim.highlight.on_yank()
