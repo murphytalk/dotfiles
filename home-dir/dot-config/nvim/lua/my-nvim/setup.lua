@@ -23,7 +23,13 @@ vim.opt.termguicolors = true
 
 vim.opt.updatetime = 50
 
+-- Sets how neovim will display certain whitespace characters in the editor.
+--  See `:help 'list'`
+--  and `:help 'listchars'`
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 -- append full path in status
+
 local current_statusline = vim.opt.statusline:get()
 vim.opt.statusline = current_statusline .. " %F"
 
