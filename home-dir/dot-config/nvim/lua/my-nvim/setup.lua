@@ -27,19 +27,19 @@ vim.opt.updatetime = 50
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 -- append full path in status
 
 local current_statusline = vim.opt.statusline:get()
 vim.opt.statusline = current_statusline .. " %F"
 
-vim.api.nvim_create_autocmd('TextYankPost',{
-    desc = 'Highlight when yanking text',
-    -- group to avoid duplicated listeners
-    group = vim.api.nvim_create_augroup('highlight-yank',{clear = true}),
-    callback = function()
-        vim.highlight.on_yank()
-    end
+vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Highlight when yanking text",
+  -- group to avoid duplicated listeners
+  group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
 })
 
 --
@@ -55,13 +55,11 @@ function ToggleZoom()
   else
     -- Save the current window layout and maximize the current window
     winrestcmd = vim.fn.winrestcmd()
-    vim.cmd('resize')
-    vim.cmd('vertical resize')
+    vim.cmd("resize")
+    vim.cmd("vertical resize")
     zoomed = true
   end
 end
 
 -- Key mapping to toggle the zoom
-vim.api.nvim_set_keymap('n', '<leader>z', '<cmd>lua ToggleZoom()<CR>', {noremap = true, silent = true})
-
-
+vim.api.nvim_set_keymap("n", "<leader>z", "<cmd>lua ToggleZoom()<CR>", { noremap = true, silent = true })
