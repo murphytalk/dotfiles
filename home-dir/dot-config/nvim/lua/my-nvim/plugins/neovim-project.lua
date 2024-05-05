@@ -1,9 +1,13 @@
+local prj = {}
+if vim.loop.os_uname().sysname == "Linux" then
+  prj = require("my-nvim.linux-projects")
+else
+  prj = require("my-nvim.win-projects")
+end
 return {
   "coffebar/neovim-project",
   opts = {
-    projects = { -- define project roots
-      "~/work/*",
-    },
+    projects = prj,
   },
   init = function()
     -- enable saving the state of plugins in the session
