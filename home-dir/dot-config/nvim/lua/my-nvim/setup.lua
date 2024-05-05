@@ -1,3 +1,5 @@
+vim.cmd("language en_US")
+
 -- relative linue number
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -13,7 +15,9 @@ vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+if vim.loop.os_uname().sysname == "Linux" then
+  vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+end
 vim.opt.undofile = true
 
 vim.opt.hlsearch = false
