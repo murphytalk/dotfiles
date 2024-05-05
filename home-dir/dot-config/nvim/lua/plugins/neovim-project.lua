@@ -6,6 +6,7 @@ else
 end
 return {
   "coffebar/neovim-project",
+  cond = not vim.g.vscode,
   opts = {
     projects = prj,
   },

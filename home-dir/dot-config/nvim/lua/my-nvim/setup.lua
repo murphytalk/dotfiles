@@ -1,5 +1,3 @@
-vim.cmd("language en_US")
-
 -- relative linue number
 vim.opt.nu = true
 vim.opt.relativenumber = true

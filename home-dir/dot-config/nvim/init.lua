@@ -23,6 +23,11 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- lazy-nvim requires leader key be setup first
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+require("lazy").setup("plugins")
+
 -- Neovim configuration
 if vim.g.vscode then
   require("vscode")
