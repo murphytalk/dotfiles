@@ -13,9 +13,10 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
+vim.opt.timeoutlen = 500
 
 vim.opt.updatetime = 50
-
+vim.opt.timeoutlen = 200
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
