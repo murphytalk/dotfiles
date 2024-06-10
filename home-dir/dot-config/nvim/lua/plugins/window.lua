@@ -3,6 +3,6 @@ return {
   cond = not vim.g.vscode,
   config = function()
     local w = require("nvim-window")
-    vim.keymap.set("n", "<leader>w", w.pick, {})
+    vim.keymap.set("n", "<leader>W", w.pick, {})
   end,
 }
