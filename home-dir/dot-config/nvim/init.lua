@@ -40,7 +40,7 @@ vim.opt.wrap = false
 
 -- Neovim configuration
 if vim.g.vscode then
-  require("vscode")
+  require("my-vscode")
 else
   require("my-nvim")
 end
