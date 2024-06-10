@@ -13,7 +13,6 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
-vim.opt.timeoutlen = 500
 
 vim.opt.updatetime = 50
 vim.opt.timeoutlen = 200
