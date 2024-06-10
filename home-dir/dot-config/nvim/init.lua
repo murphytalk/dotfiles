@@ -23,6 +23,21 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- lazy-nvim requires leader key be setup first
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+require("lazy").setup("plugins")
+
+-- shared options
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+
+vim.opt.smartindent = true
+
+vim.opt.wrap = false
+
 -- Neovim configuration
 if vim.g.vscode then
   require("my-vscode")
