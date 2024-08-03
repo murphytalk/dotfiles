@@ -21,6 +21,7 @@ return {
     { "nvim-telescope/telescope-ui-select.nvim" },
     -- Useful for getting pretty icons, but requires a Nerd Font.
     { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
+    { "jvgrootveld/telescope-zoxide" },
   },
   config = function()
     -- [[ Configure Telescope ]]
@@ -40,11 +41,17 @@ return {
         ["ui-select"] = {
           require("telescope.themes").get_dropdown(),
         },
+        zoxide = {
+          prompt_title = "[ My Zoxide List ]",
+          -- Zoxide list command with score
+          list_command = "zoxide query -ls",
+        },
       },
     })
     -- Enable Telescope extensions if they are installed
     pcall(tel.load_extension, "fzf")
     pcall(tel.load_extension, "ui-select")
+    pcall(tel.load_extension, "zoxide")
 
     local builtin = require("telescope.builtin")
     vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[F]ind [H]elp" })
@@ -55,6 +62,8 @@ return {
     vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[F]ind by [G]rep" })
     vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[F]ind by [B]uffer" })
     vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind by [D]iagostics" })
+
+    vim.keymap.set("n", "<leader>fz", tel.extensions.zoxide.list, { desc = "[F]ind by [Z]oxide" })
 
     -- Slightly advanced example of overriding default behavior and theme
     vim.keymap.set("n", "<leader>/", function()
