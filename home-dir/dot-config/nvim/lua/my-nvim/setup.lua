@@ -1,6 +1,7 @@
 -- relative linue number
 vim.opt.nu = true
 vim.opt.relativenumber = true
+vim.wo.relativenumber = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -35,6 +36,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+-- https://github.com/epwalsh/obsidian.nvim/issues/286
+vim.opt_local.conceallevel = 2
 --
 -- Toggle window zoom in Neovim
 local zoomed = false

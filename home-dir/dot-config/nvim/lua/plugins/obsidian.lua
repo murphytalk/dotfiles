@@ -1,3 +1,7 @@
+local wkdir = ""
+if vim.loop.os_uname().sysname == "Linux" then
+  wkdir = "~/Dropbox/org-mode/"
+end
 return {
   "epwalsh/obsidian.nvim",
   version = "*", -- recommended, use latest release instead of latest commit
@@ -11,7 +15,7 @@ return {
     workspaces = {
       {
         name = "org-mode",
-        path = "/mnt/c/DATA/syncthing/org-mode",
+        path = wkdir,
       },
     },
 
