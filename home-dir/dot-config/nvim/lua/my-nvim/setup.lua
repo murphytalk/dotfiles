@@ -37,7 +37,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- https://github.com/epwalsh/obsidian.nvim/issues/286
-vim.opt_local.conceallevel = 2
+vim.opt.conceallevel = 1
 --
 -- Toggle window zoom in Neovim
 local zoomed = false
