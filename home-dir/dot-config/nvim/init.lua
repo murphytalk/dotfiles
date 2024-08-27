@@ -23,6 +23,13 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- my stuff
+if vim.loop.os_uname().sysname == "Linux" then
+  vim.g.notes_dir = "~/Dropbox/org-mode/"
+else
+  vim.g.notes_dir = "d:/Syncthing/org-mode/"
+end
+
 -- lazy-nvim requires leader key be setup first
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "

@@ -36,7 +36,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+-- yank to clipboard
+vim.opt.clipboard:append("unnamedplus")
+
 -- https://github.com/epwalsh/obsidian.nvim/issues/286
+-- vim.opt.conceallevel = 1
 vim.opt.conceallevel = 1
 --
 -- Toggle window zoom in Neovim

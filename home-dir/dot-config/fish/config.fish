@@ -36,5 +36,6 @@ set PATH  ~/.local/bin/ $FLUTTER_HOME/bin $MY_ANDROID_SDK_HOME/platform-tools/ /
 
 alias p='fzf --preview "bat --color=always {}"'
 zoxide init fish | source
-oh-my-posh init fish | source
+#oh-my-posh init fish | source
+starship init fish | source
 fzf --fish | source

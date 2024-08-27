@@ -10,7 +10,10 @@ blur = true
 startup_mode =  "Maximized"
 
 [font]
-normal = { family = "Cascadia Code NF", style="Light" }
+normal = { family = "FiraCode Nerd Font Propo", style="Regular" }
+#normal = { family = "3270 Nerd Font SemCond", style="Regular" }
+#normal = { family = "JetBrainsMonoNL NFM Light", style="Light" }
+#normal = { family = "Cascadia Code NF", style="Light" }
 bold = { family = "Cascadia Code NF", style="Bold" }
-size = 11
+size = 9
 

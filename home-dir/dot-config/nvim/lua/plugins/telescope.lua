@@ -77,6 +77,11 @@ return {
     -- Shortcut for searching your Neovim configuration files
     vim.keymap.set("n", "<leader>fn", function()
       builtin.find_files({ cwd = vim.fn.stdpath("config") })
-    end, { desc = "[F]ind [N]eovim files" })
+    end, { desc = "[F]ind [n]eovim files" })
+
+    -- Shortcut for searching your Neovim configuration files
+    vim.keymap.set("n", "<leader>fN", function()
+      builtin.find_files({ cwd = vim.g.notes_dir })
+    end, { desc = "[F]ind [N]ote" })
   end,
 }
