@@ -3,7 +3,7 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.api.nvim_set_keymap("n", "<C-p>", ":Telescope neovim-project discover<CR>", { noremap = true, silent = false })
 
 -- Function to map <Esc> to <C-\><C-n> in terminal mode
-vim.api.nvim_set_keymap("t", "<Esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
 
 -- old emacs habit
 vim.api.nvim_set_keymap("n", "<C-x><C-f>", ":edit ", { noremap = true, silent = false })
