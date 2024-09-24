@@ -1,6 +1,8 @@
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.api.nvim_set_keymap("n", "<C-p>", ":Telescope neovim-project discover<CR>", { noremap = true, silent = false })
+-- for some reason the buffer sometimes loses line number display, especially when using terminal
+vim.api.nvim_set_keymap("n", "<leader>N", ":setlocal relativenumber<CR>", { noremap = true, silent = false })
 
 -- Function to map <Esc> to <C-\><C-n> in terminal mode
 vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
