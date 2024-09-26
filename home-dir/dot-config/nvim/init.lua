@@ -25,7 +25,11 @@ vim.opt.rtp:prepend(lazypath)
 
 -- my stuff
 if vim.loop.os_uname().sysname == "Linux" then
-  vim.g.notes_dir = "~/Dropbox/org-mode/"
+  if vim.loop.os_uname().release:lower():find("microsoft") == nil then
+    vim.g.notes_dir = "~/Dropbox/org-mode/"
+  else
+    vim.g.notes_dir = "/mnt/d/Syncthing/org-mode/"
+  end
 else
   vim.g.notes_dir = "d:/Syncthing/org-mode/"
 end
