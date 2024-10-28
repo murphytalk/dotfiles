@@ -32,6 +32,16 @@ if test -d /etc/portage
     setenv MY_ANDROID_SDK_HOME /mnt/extra/apps/android-sdk
     setenv MY_ANDROID_NDK $MY_ANDROID_SDK_HOME/ndk-bundle/
 end
+
+function y
+	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+	~/.cargo/bin/yazi $argv --cwd-file="$tmp"
+	if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+		builtin cd -- "$cwd"
+	end
+	rm -f -- "$tmp"
+end
+
 set PATH  ~/.local/bin/ $FLUTTER_HOME/bin $MY_ANDROID_SDK_HOME/platform-tools/ /home/linuxbrew/.linuxbrew/bin $PATH
 
 alias p='fzf --preview "bat --color=always {}"'
