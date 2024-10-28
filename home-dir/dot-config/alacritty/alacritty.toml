@@ -5,7 +5,7 @@ live_config_reload = true
 
 [window]
 decorations = "Full"
-opacity = 0.7
+opacity = 0.5
 blur = true
 startup_mode =  "Maximized"
 
