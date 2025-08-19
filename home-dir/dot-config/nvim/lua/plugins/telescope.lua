@@ -22,6 +22,7 @@ return {
     -- Useful for getting pretty icons, but requires a Nerd Font.
     { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
     { "jvgrootveld/telescope-zoxide" },
+    "Joakker/todo-txt.nvim",
   },
   config = function()
     -- [[ Configure Telescope ]]
@@ -55,6 +56,7 @@ return {
     pcall(tel.load_extension, "fzf")
     pcall(tel.load_extension, "ui-select")
     pcall(tel.load_extension, "zoxide")
+    pcall(tel.load_extension, "todo-txt")
 
     local builtin = require("telescope.builtin")
     vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[F]ind [H]elp" })
@@ -65,6 +67,7 @@ return {
     vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[F]ind by [G]rep" })
     vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[F]ind by [B]uffer" })
     vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind by [D]iagostics" })
+    vim.keymap.set("n", "<leader>ft", tel.extensions["todo-txt"].todo, { desc = "[F]ind [T]odos" })
 
     vim.keymap.set("n", "<leader>fz", tel.extensions.zoxide.list, { desc = "[F]ind by [Z]oxide" })
 

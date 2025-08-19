@@ -67,3 +67,5 @@ fi
 
 
 EDITOR=vim
+
+. "$HOME/.local/bin/env"

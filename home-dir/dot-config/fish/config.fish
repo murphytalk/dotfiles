@@ -45,12 +45,16 @@ end
 
 function f
     cd ~/work/finance_scraper
-    . v/bin/activate.fish
+    . venv/bin/activate.fish
     python -m console.shell
     deactivate
 end
 
-set PATH  ~/.local/bin/ $FLUTTER_HOME/bin $MY_ANDROID_SDK_HOME/platform-tools/ /home/linuxbrew/.linuxbrew/bin $PATH
+set PATH ~/go/bin  ~/.cargo/bin ~/.local/bin/ $FLUTTER_HOME/bin $MY_ANDROID_SDK_HOME/platform-tools/ /home/linuxbrew/.linuxbrew/bin $PATH
+
+function gemini-glow
+    gemini | glow
+end
 
 alias p='fzf --preview "bat --color=always {}"'
 zoxide init fish | source
@@ -60,3 +64,5 @@ fzf --fish | source
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/mu/temp/google-cloud-sdk/path.fish.inc' ]; . '/home/mu/temp/google-cloud-sdk/path.fish.inc'; end
+
+alias t='todo.sh -d /mnt/d/Syncthing/mobile/todo/todo.cfg'
