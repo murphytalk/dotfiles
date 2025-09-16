@@ -1,6 +1,9 @@
 return { -- LSP Configuration & Plugins
   "neovim/nvim-lspconfig",
   cond = not vim.g.vscode,
+  opt = {
+    inlay_hints = { enabled = true },
+  },
   dependencies = {
     -- Automatically install LSPs and related tools to stdpath for Neovim
     { "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
@@ -137,6 +140,12 @@ return { -- LSP Configuration & Plugins
           end, "[T]oggle Inlay [H]ints")
         end
       end,
+    })
+
+    vim.diagnostic.config({
+      virtual_lines = {
+        current_line = true,
+      },
     })
 
     -- LSP servers and clients are able to communicate to each other what features they support.
