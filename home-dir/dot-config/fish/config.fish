@@ -63,9 +63,17 @@ starship init fish | source
 fzf --fish | source
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/mu/temp/google-cloud-sdk/path.fish.inc' ]; . '/home/mu/temp/google-cloud-sdk/path.fish.inc'; end
+#if [ -f '/home/mu/temp/google-cloud-sdk/path.fish.inc' ]; . '/home/mu/temp/google-cloud-sdk/path.fish.inc'; end
 
 alias t='todo.sh -d /mnt/d/Syncthing/mobile/todo/todo.cfg'
+
+set -x XDG_CURRENT_DESKTOP Hyprland
+set -x XDG_SESSION_TYPE wayland
+# set -x BROWSER firefox
+set -x FILE_MANAGER spacefm
+alias open="xdg-open"
+
+
 
 set XMODIFIERS @im=fcitx
 
