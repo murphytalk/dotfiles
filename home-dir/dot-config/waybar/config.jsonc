@@ -2,7 +2,7 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
+    "height": 20, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
@@ -15,6 +15,8 @@
     "modules-right": [
 //      "mpd",
         "idle_inhibitor",
+        "custom/bluetooth",
+        "custom/btconnect",
         "pulseaudio",
         "network",
         "power-profiles-daemon",
@@ -103,10 +105,10 @@
     "tray": {
         // "icon-size": 21,
         "spacing": 10,
-        // "icons": {
-        //   "blueman": "bluetooth",
+         "icons": {
+           "blueman": "bluetooth",
         //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-        // }
+        }
     },
     "clock": {
         // "timezone": "America/New_York",
@@ -213,5 +215,15 @@
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibernate"
 		}
+    },
+    "custom/bluetooth": {
+      "exec": "~/.config/waybar/scripts/bluetooth-toggle.sh",
+      "interval": 5,
+      "on-click": "~/.config/waybar/scripts/bluetooth-toggle.sh toggle"
+    },
+    "custom/btconnect": {
+      "exec": "~/.config/waybar/scripts/bluetooth-connect.sh",
+      "interval": 10,
+      "on-click": "~/.config/waybar/scripts/bluetooth-connect.sh toggle"
     }
 }
