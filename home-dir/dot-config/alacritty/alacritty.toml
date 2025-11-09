@@ -1,3 +1,6 @@
+[terminal.shell]
+program = "/home/mu/.tmux-start.fish"
+
 [window]
 decorations = "Full"
 opacity = 0.5
