@@ -66,6 +66,7 @@ fzf --fish | source
 #if [ -f '/home/mu/temp/google-cloud-sdk/path.fish.inc' ]; . '/home/mu/temp/google-cloud-sdk/path.fish.inc'; end
 
 alias t='todo.sh -d /mnt/d/Syncthing/mobile/todo/todo.cfg'
+#alias hpu="HYPRLAND_INSTANCE_SIGNATURE=(ls -ltr  /run/user/$(id -u)/hypr/|tail -1|sed 's/^.* \([0-9a-z_]*\)$/\1/g') hyprctl"
 
 set -x XDG_CURRENT_DESKTOP Hyprland
 set -x XDG_SESSION_TYPE wayland
