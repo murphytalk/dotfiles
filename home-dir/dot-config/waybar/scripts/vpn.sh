@@ -1,0 +1,19 @@
+#!/bin/bash
+toggle=$1
+
+if [ ! -z "$toggle" ]; then
+    ~/work/home-server/vpn/wireguard/wireguard.sh
+fi
+
+if  ifconfig | grep -q "peer_desktop"; then
+    on="yes"
+else
+    on="no"
+fi
+
+if [ "$on" = "yes" ]; then
+    echo ""
+else
+    echo ""
+fi
+

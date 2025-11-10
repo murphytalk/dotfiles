@@ -17,6 +17,7 @@
         "idle_inhibitor",
         "custom/bluetooth",
         "custom/btconnect",
+        "custom/vpn",
         "pulseaudio",
         "network",
         "power-profiles-daemon",
@@ -40,10 +41,10 @@
         "format": "{name}: {icon}",
         "format-icons": {
             "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
             "urgent": "",
             //"focused": "",
             "active": "",
@@ -225,5 +226,10 @@
       "exec": "~/.config/waybar/scripts/bluetooth-connect.sh",
       "interval": 10,
       "on-click": "~/.config/waybar/scripts/bluetooth-connect.sh toggle"
+    },
+    "custom/vpn": {
+      "exec": "~/.config/waybar/scripts/vpn.sh",
+      "interval": 10,
+      "on-click": "~/.config/waybar/scripts/vpn.sh toggle"
     }
 }
