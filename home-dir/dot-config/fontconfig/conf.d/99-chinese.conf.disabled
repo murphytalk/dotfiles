@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+    <!-- Use Noto Sans CJK for common CJK characters and punctuation -->
+    <match target="pattern">
+        <test name="charset" compare="contains">
+            <charset>
+                <!-- CJK Symbols & Punctuation -->
+                <range>0x3000-0x303F</range>
+                <!-- Common CJK Unified Ideographs -->
+                <range>0x4E00-0x9FFF</range>
+            </charset>
+        </test>
+        <edit name="family" mode="prepend" binding="strong">
+            <string>Noto Sans CJK SC</string> <!-- Simplified Chinese -->
+            <string>Noto Sans CJK TC</string> <!-- Traditional Chinese -->
+            <string>Noto Sans CJK JP</string> <!-- Japanese -->
+            <string>Noto Sans CJK KR</string> <!-- Korean -->
+        </edit>
+    </match>
+
+    <!-- Prepend Noto Sans CJK to all CJK font families -->
+    <!--
+    <match target="pattern">
+        <test name="family" compare="contains">
+            <string>sans-serif</string>
+        </test>
+        <edit name="family" mode="prepend" binding="strong">
+            <string>Noto Sans CJK SC</string>
+            <string>Noto Sans CJK TC</string>
+            <string>Noto Sans CJK JP</string>
+            <string>Noto Sans CJK KR</string>
+        </edit>
+    </match>
+    -->
+</fontconfig>
+
