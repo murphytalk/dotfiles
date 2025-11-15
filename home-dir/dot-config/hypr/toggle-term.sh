@@ -3,6 +3,9 @@ APP_CLASS="st-256color"
 APP_CMD="st"
 STATE_FILE="/tmp/${APP_CLASS}_workspace"
 
+# optional parameter: workspace ID
+TARGET_WS="$1"
+
 # Find window by class
 WIN_INFO=$(hyprctl clients -j | jq -r ".[] | select(.class==\"$APP_CLASS\")")
 
@@ -15,6 +18,15 @@ fi
 WIN_ADDR=$(echo "$WIN_INFO" | jq -r ".address")
 WIN_WS=$(echo "$WIN_INFO" | jq -r ".workspace.id")
 CUR_WS=$(hyprctl activeworkspace -j | jq -r ".id")
+
+if [ -n "$TARGET_WS" ]; then
+    if [ "$WIN_WS" != "$TARGET_WS" ]; then
+        # Move to target workspace and focus
+        hyprctl dispatch movetoworkspace "$TARGET_WS,address:$WIN_ADDR"
+        hyprctl dispatch focuswindow address:$WIN_ADDR
+        exit 0
+    fi
+fi
 
 if [ "$WIN_WS" != "$CUR_WS" ]; then
     # Move to current workspace, remember original
