@@ -1,0 +1,30 @@
+# Time before notification disappears (ms)
+default-timeout=5000
+
+# Position on screen
+anchor=top-right
+margin=15
+
+# Transparency & background color
+background-color=#1e1e2eff
+border-color=#5e81acff
+border-size=2
+#radius=8
+
+# Text settings
+text-color=#eceff4ff
+font=FiraCode Nerd Font 11
+
+# Icons
+icon-path=/usr/share/icons
+
+# Colors
+# https://github.com/catppuccin/mako/blob/main/themes/catppuccin-mocha/catppuccin-mocha-sky
+
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#89dceb
+progress-color=over #313244
+
+[urgency=high]
+border-color=#fab387
