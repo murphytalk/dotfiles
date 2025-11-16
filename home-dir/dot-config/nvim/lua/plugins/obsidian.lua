@@ -8,6 +8,7 @@ return {
     "nvim-lua/plenary.nvim",
   },
   opts = {
+    disable_frontmatter = true,
     workspaces = {
       {
         name = "org-mode",
