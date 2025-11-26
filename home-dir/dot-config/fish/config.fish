@@ -19,7 +19,7 @@ if test -d /etc/portage
 
     function tuu
         set PORTFS /var/tmp/portage
-        if not grep $PORTFS /proc/mounts > /dev/null
+        if not grep $PORTFS /proc/mounts >/dev/null
             sudo mount -t tmpfs -o size=8G,uid=portage,gid=portage,mode=775,noatime tmpfs $PORTFS
         end
         sudo emerge -uDU --keep-going --with-bdeps=y @world
@@ -34,14 +34,13 @@ if test -d /etc/portage
 end
 
 function y
-	set tmp (mktemp -t "yazi-cwd.XXXXXX")
-	~/.cargo/bin/yazi $argv --cwd-file="$tmp"
-	if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-		builtin cd -- "$cwd"
-	end
-	rm -f -- "$tmp"
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    /mnt/extra/apps/yazi-x86_64-unknown-linux-gnu/yazi $argv --cwd-file="$tmp"
+    if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+        builtin cd -- "$cwd"
+    end
+    rm -f -- "$tmp"
 end
-
 
 function f
     cd ~/work/finance_scraper
@@ -50,7 +49,7 @@ function f
     deactivate
 end
 
-set PATH ~/go/bin  ~/.cargo/bin ~/.local/bin/ $FLUTTER_HOME/bin $MY_ANDROID_SDK_HOME/platform-tools/ /home/linuxbrew/.linuxbrew/bin $PATH
+set PATH ~/go/bin ~/.cargo/bin ~/.local/bin/ $FLUTTER_HOME/bin $MY_ANDROID_SDK_HOME/platform-tools/ /home/linuxbrew/.linuxbrew/bin $PATH
 
 function gemini-glow
     gemini | glow
@@ -74,8 +73,6 @@ set -x XDG_SESSION_TYPE wayland
 set -x FILE_MANAGER spacefm
 alias open="xdg-open"
 
-
-
 set XMODIFIERS @im=fcitx
 
 # bun
@@ -95,4 +92,3 @@ if status is-interactive
         end
     end
 end
-
