@@ -74,17 +74,20 @@ set -x FILE_MANAGER spacefm
 alias open="xdg-open"
 
 set XMODIFIERS @im=fcitx
+#set TERM xterm-256color
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
 if status is-interactive
-    if not set -q TMUX
-        if tmux has-session 2>/dev/null
-            exec tmux attach
-        else
-            exec tmux new -s main
+    if not set -q TMUX; and not string match -q "st*" $TERM
+        if not pgrep -x st /dev/null
+            if tmux has-session 2>/dev/null
+                exec tmux attach
+            else
+                exec tmux new -s main
+            end
         end
     end
 end
