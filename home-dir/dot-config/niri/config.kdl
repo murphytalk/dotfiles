@@ -340,13 +340,15 @@ window-rule {
     }
 }
 
-/-window-rule {
-    match app-id="terminal"
-    clip-to-geometry false
-    geometry-corner-radius 8 8 0 0
-    border {
-        // width 4
-    }
+window-rule {
+    match app-id="com.mitchellh.ghostty"
+    open-maximized true
+    opacity 0.95
+}
+
+window-rule {
+    match app-id="st-256color"
+    opacity 0.9
 }
 
 /-window-rule {
@@ -478,10 +480,12 @@ binds {
     Mod+Shift+C { spawn "sh" "-c" "t env DISPLAY=:0 xsel -ob | wl-copy"; }
     Mod+Shift+V { spawn "sh" "-c" "wl-paste -n | t env DISPLAY=:0 xsel -ib"; }
 
-    // Mod+T { spawn "sh" "-c" "alacritty msg create-window -e fish -C t || alacritty -e fish -C t"; }
     Mod+T { spawn "st"; }
+    Ctrl+Alt+C { spawn "ghostty"; }
     Alt+Space { spawn "~/.config/hypr/bemenu.sh"; }
-    Mod+Ctrl+Alt+W { spawn "sh"  "-c" "st -e ~/work/home-server/vpn/wireguard/wireguard.sh";}
+    Mod+Ctrl+Alt+S { spawn-sh "sudo systemctl suspend";}
+   
+    Mod+Ctrl+Alt+W { spawn "sh" "-c" "st -e ~/work/home-server/vpn/wireguard/wireguard.sh";}
     Mod+Ctrl+Alt+K { spawn "~/.config/niri/IKBR.sh";}
     Mod+Ctrl+Alt+I { spawn "~/.config/niri/SWB.sh";}
     // Mod+Return { spawn "~/arst"; }
@@ -491,7 +495,7 @@ binds {
     // Mod+T { spawn "kgx" "-e" "fish -C t"; }
     Mod+D { spawn "fuzzel"; }
     //Mod+H { spawn "nautilus"; }
-    Super+Alt+L allow-when-locked=true { spawn "swaylock"; }
+    //Super+Alt+L allow-when-locked=true { spawn "swaylock"; }
 
     Mod+W { spawn "sh" "-c" "t mpv --pause $(wl-paste)"; }
     Super+Alt+H     { spawn "refresh.sh" "144"; }
