@@ -79,10 +79,6 @@ set XMODIFIERS @im=fcitx
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
-
 if status is-interactive
     if not set -q TMUX
         if tmux has-session 2>/dev/null
