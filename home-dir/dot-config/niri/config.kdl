@@ -90,6 +90,11 @@ output "DP-3" {
     // variable-refresh-rate
 }
 
+workspace "NOTE"{
+    // background-color "#000000"
+    open-on-output "DP-3"
+}
+
 workspace "IKBR"{
     // background-color "#000000"
     open-on-output "DP-3"
@@ -435,21 +440,17 @@ window-rule {
 }
 
 window-rule {
-    match app-id="^obsidian$"
-    default-column-width { fixed 1000; }
+    match app-id="^firefox$"
+    match app-id="microsoft-edge"
+    open-on-output "HDMI-A-5"
+    open-maximized true
+    open-focused true
 }
 
 window-rule {
-    match app-id=r#"^org\.mozilla\.firefox$"#
-    match app-id=r#"^org\.telegram\.desktop$"#
-    exclude app-id=r#"^org\.telegram\.desktop$"# title="^Media viewer$"
-
-    open-on-output "DP-2"
-}
-
-window-rule {
-    match app-id=r#"^org\.mozilla\.firefox$"#
-
+    match app-id="^Logseq"
+    open-maximized true
+    open-focused true
     default-column-width { proportion 0.66667; }
 }
 
@@ -475,6 +476,7 @@ window-rule {
 }
 
 binds {
+    Ctrl+Mod+Alt+P { toggle-overview; }
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Shift+C { spawn "sh" "-c" "t env DISPLAY=:0 xsel -ob | wl-copy"; }
@@ -486,8 +488,9 @@ binds {
     Mod+Ctrl+Alt+S { spawn-sh "sudo systemctl suspend";}
    
     Mod+Ctrl+Alt+W { spawn "sh" "-c" "st -e ~/work/home-server/vpn/wireguard/wireguard.sh";}
-    Mod+Ctrl+Alt+K { spawn "~/.config/niri/IKBR.sh";}
-    Mod+Ctrl+Alt+I { spawn "~/.config/niri/SWB.sh";}
+    Ctrl+Alt+K { spawn "~/.config/niri/IKBR.sh";}
+    Ctrl+Alt+I { spawn "~/.config/niri/SWB.sh";}
+    Ctrl+Alt+L { spawn "~/.config/niri/NOTE.sh";}
     // Mod+Return { spawn "~/arst"; }
     // Mod+T { spawn "flatpak" "run" "org.gnome.Ptyxis.Devel" "-s"; }
     // Mod+T { spawn "~/.local/bin/spawn-ptyxis.sh"; }
