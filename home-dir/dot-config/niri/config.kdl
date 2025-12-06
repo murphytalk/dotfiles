@@ -357,6 +357,12 @@ window-rule {
     opacity 0.9
 }
 
+window-rule {
+    match app-id="Spacefm"
+    open-floating true
+}
+
+
 /-window-rule {
     match app-id="code"
     // opacity 0.98
@@ -470,15 +476,17 @@ window-rule {
 }
 
 binds {
-    Ctrl+Mod+Alt+P { toggle-overview; }
+    Mod+G { toggle-overview; }
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Shift+C { spawn "sh" "-c" "t env DISPLAY=:0 xsel -ob | wl-copy"; }
+    //Mod+Shift+C { spawn "sh" "-c" "t env DISPLAY=:0 xsel -ob | wl-copy"; }
+    Mod+Shift+C { spawn "sh" "-c" "wl-paste | xclip -selection clipboard"; }
     Mod+Shift+V { spawn "sh" "-c" "wl-paste -n | t env DISPLAY=:0 xsel -ib"; }
 
     Mod+T { spawn "st"; }
+    Mod+Q { spawn "msedge"; }
     Ctrl+Alt+C { spawn "ghostty"; }
-    Alt+Space { spawn "~/.config/hypr/bemenu.sh"; }
+    // Alt+Space { spawn "~/.config/hypr/bemenu.sh"; }
     Mod+Ctrl+Alt+S { spawn-sh "sudo systemctl suspend";}
    
     Mod+Ctrl+Alt+W { spawn "sh" "-c" "st -e ~/work/home-server/vpn/wireguard/wireguard.sh";}
@@ -490,7 +498,7 @@ binds {
     // Mod+T { spawn "~/.local/bin/spawn-ptyxis.sh"; }
     // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
     // Mod+T { spawn "kgx" "-e" "fish -C t"; }
-    Mod+D { spawn "fuzzel"; }
+    Alt+SPACE { spawn "fuzzel"; }
     //Mod+H { spawn "nautilus"; }
     //Super+Alt+L allow-when-locked=true { spawn "swaylock"; }
 
@@ -503,7 +511,7 @@ binds {
     XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
 
-    Mod+Q { close-window; }
+    Mod+X { close-window; }
     Mod+BackSpace { close-window; }
 
     Mod+H     { focus-column-left; }
