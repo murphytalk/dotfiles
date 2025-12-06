@@ -523,14 +523,14 @@ binds {
     Mod+Up    { focus-window-up; }
     Mod+Right { focus-column-right; }
 
-    Mod+Ctrl+M     { move-column-left; }
-    Mod+Ctrl+N     { move-window-down; }
-    Mod+Ctrl+E     { move-window-up; }
-    Mod+Ctrl+I     { move-column-right; }
-    Mod+Ctrl+Left  { move-column-left; }
-    Mod+Ctrl+Down  { move-window-down; }
-    Mod+Ctrl+Up    { move-window-up; }
-    Mod+Ctrl+Right { move-column-right; }
+    Ctrl+Shift+W     { move-column-left; }
+    Ctrl+Shift+Left  { move-column-left; }
+    Ctrl+Shift+E     { move-column-right; }
+    Ctrl+Shift+Right { move-column-right; }
+    Ctrl+Shift+N     { move-window-up; }
+    Ctrl+Shift+Up    { move-window-up; }
+    Ctrl+Shift+S     { move-window-down; }
+    Ctrl+Shift+Down  { move-window-down; }
 
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }
