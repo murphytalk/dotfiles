@@ -108,7 +108,7 @@ workspace "SWB"{
 layout {
     focus-ring {
         off
-        width 2
+        width 1
         // catppuccin-mocha Sapphire
         active-color "#74c7ec"
         // catppuccin-mocha Surface2
@@ -119,7 +119,7 @@ layout {
 
     border {
         // off
-        width 2
+        width 1
         // width 128
 
         // active-color "#f38ba8"
@@ -146,7 +146,7 @@ layout {
     default-column-width { proportion 0.3333333333333333; }
     // default-column-width { }
 
-    gaps 4
+    gaps 2
 
     struts {
         // left 64
