@@ -359,6 +359,7 @@ window-rule {
 
 window-rule {
     match app-id="Spacefm"
+    match app-id="org.pulseaudio.pavucontrol"
     open-floating true
 }
 
@@ -627,6 +628,7 @@ binds {
 
     Mod+R { switch-preset-column-width; }
     Mod+F { maximize-column; }
+    Ctrl+Shift+F { toggle-window-floating; }
     Mod+Shift+F { fullscreen-window; }
     Mod+C { center-column; }
 
