@@ -1,0 +1,8 @@
+[Unit]
+Description=My backup job
+
+[Service]
+Type=oneshot
+ExecStart=/home/mu/work/toolbox/scripts/sync-cloud  push -c pcloud -p mobile -r /mnt/extra/syncing
+ExecStart=/home/mu/work/toolbox/scripts/sync-cloud  push -c pcloud -p exclude-mobile -r /mnt/extra/syncing
+
