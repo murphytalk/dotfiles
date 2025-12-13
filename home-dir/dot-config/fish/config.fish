@@ -81,7 +81,7 @@ set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
 if status is-interactive
-    if not set -q TMUX; and not string match -q "st*" $TERM
+    if not set -q TMUX; and string match -q "*ghostty" $TERM 
         if not pgrep -x st /dev/null
             if tmux has-session 2>/dev/null
                 exec tmux attach
