@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Windows VM
+Comment=Connect to a local Windows VM via xfreerdp
+Exec=/mnt/extra/apps/winvm/xf.sh
+Icon=windows
+Terminal=false
+Categories=System;
