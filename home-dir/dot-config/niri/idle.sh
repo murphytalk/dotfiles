@@ -9,6 +9,6 @@
 # - It also locks the screen before the system sleeps for any other reason.
 
 exec swayidle -w \
-  timeout 900 'swaylock' \
-  timeout 1800 'sudo systemctl suspend' \
+  timeout 1800 'swaylock' \
+  timeout 3600 'sudo systemctl suspend' \
   before-sleep 'swaylock'
