@@ -3,8 +3,8 @@ app=$(basename "$0")
 app=${app%.*}
 
 if [[ "$app" == "IKBR" ]]; then
-  name="tws"
-  app_exe=/mnt/extra/apps/tws/tws
+  name="ntws"
+  app_exe=/mnt/extra/apps/ntws/ntws
 elif [[ "$app" == "SWB" ]]; then
   name="thinkorswim"
   app_exe=/mnt/extra/apps/run-thinkorswim.sh
