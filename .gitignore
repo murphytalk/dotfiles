@@ -6,5 +6,5 @@ home-dir/dot-vim/undodir
 home-dir/dot-vim/.netrwhist
 home-dir/dot-config/nvim/play.lua
 algo-vpn/configs/
-
+.env
 GEMINI.md
