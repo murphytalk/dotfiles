@@ -161,9 +161,9 @@ layout {
 }
 
 cursor {
-    // xcursor-theme "breeze_cursors"
+    xcursor-theme "Adwaita"
     // xcursor-theme "arstieonart"
-    // xcursor-size 48
+    xcursor-size 24
 }
 
 spawn-at-startup "waybar"
@@ -345,6 +345,16 @@ window-rule {
         width 12
     }
 }
+
+window-rule {
+    match app-id="com.mitchellh.ghostty"
+    match title="TUI"
+    open-floating true
+    open-focused true
+    default-column-width { proportion 0.75; }
+    default-window-height { fixed 500; }
+}
+
 
 window-rule {
     match app-id="com.mitchellh.ghostty"
