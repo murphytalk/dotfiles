@@ -167,7 +167,7 @@ cursor {
 }
 
 spawn-at-startup "waybar"
-spawn-sh-at-startup "swaybg -o DP-4 -i ~/wallpapers/blackhole.jpg -o DP-3  -i ~/wallpapers/APEX-01.png"
+spawn-sh-at-startup "swaybg -o DP-4 -i ~/wallpapers/Four.png -o DP-3  -i ~/wallpapers/APEX-01.png"
 spawn-sh-at-startup "~/.config/niri/idle.sh"
 
 prefer-no-csd
