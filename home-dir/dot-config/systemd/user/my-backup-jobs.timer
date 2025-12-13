@@ -3,8 +3,8 @@ Description=Run my cronjobs
 
 [Timer]
 #OnCalendar=*-*-* 00:00:00 # Run daily at midnight
-#OnCalendar=*:0/10:00
-OnCalendar=45min
+OnCalendar=*:0/10:00
+#OnCalendar=45min
 #OnCalendar=Mon,Wed,Fri *-*-* 12:00:00 #Run Monday, Wednesday, and Friday at noon.
 #OnBootSec=1min #Run 1 minute after boot.
 #Unit=my-backup-jobs.service
