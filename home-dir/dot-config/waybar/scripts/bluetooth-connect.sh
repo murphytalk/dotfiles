@@ -20,10 +20,10 @@ if [ "$on_off" = "no" ]; then
   if [ ! -z "$toggle" ]; then
     notify-send "Bluetooth Speaker" " Disconnected"
   fi
-  printf '{"text":"%s","tooltip":"%s: %s"}\n' "󰓄" "$DEVICE_NAME" "Disconnected"
+  printf '{"text":"%s","tooltip":"%s: %s","class":"%s"}\n' "󰓄" "$DEVICE_NAME" "Disconnected" "off"
 else
   if [ ! -z "$toggle" ]; then
     notify-send "Bluetooth Speaker" " Connected"
   fi
-  printf '{"text":"%s","tooltip":"%s: %s"}\n' "󰦢" "$DEVICE_NAME" "Connected"
+  printf '{"text":"%s","tooltip":"%s: %s","class":"%s"}\n' "󰦢" "$DEVICE_NAME" "Connected" "on"
 fi

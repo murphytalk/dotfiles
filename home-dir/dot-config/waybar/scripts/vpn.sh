@@ -12,8 +12,8 @@ else
 fi
 
 if [ "$on" = "yes" ]; then
-    printf '{"text":"%s","tooltip":"%s"}\n' "" "VPN: On"
+    printf '{"text":"%s","tooltip":"%s","class":"%s"}\n' "" "VPN: On" "on"
 else
-    printf '{"text":"%s","tooltip":"%s"}\n' "" "VPN: Off"
+    printf '{"text":"%s","tooltip":"%s","class":"%s"}\n' "" "VPN: Off" "off"
 fi
 

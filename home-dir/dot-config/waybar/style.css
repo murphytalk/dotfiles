@@ -86,7 +86,6 @@ tooltip {
 
 #custom-btconnect {
   margin-left: 5px;
-  color: @green;
   font-size: 16px;
   min-width: 16px;
 }
@@ -94,7 +93,15 @@ tooltip {
 #custom-bluetooth {
   margin-left: 5px;
   font-size: 16px;
+}
+
+#custom-bluetooth.on {
   color: @blue;
+}
+
+#custom-btconnect.on,
+#custom-vpn.on {
+  color: @green;
 }
 
 #custom-vpn {
