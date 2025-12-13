@@ -9,12 +9,14 @@
     "niri/workspaces"
   ],
   "modules-center": [
-    "clock",
-    "niri/window"
+    "niri/window",
+    "clock"
   ],
   "modules-right": [
     "group/tray-expander",
-    "bluetooth",
+    "custom/bluetooth",
+    "custom/btconnect",
+    "custom/vpn",
     "network",
     "pulseaudio",
     "cpu",
@@ -49,10 +51,10 @@
   "cpu": {
     "interval": 5,
     "format": "󰍛",
-    "on-click": "xdg-terminal-exec --title=TUI btop"
+    "on-click": "xdg-terminal-exec --app-id=my.tui.popup --title=btop btop"
   },
   "clock": {
-    "format": "{:L%A %H:%M}",
+    "format": "\uf017 {:L%A %H:%M}",
     "format-alt": "{:L%d %B W%V %Y}",
     "tooltip": false,
     "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select"
@@ -88,6 +90,7 @@
       "hibernate": "systemctl hibernate"
     }
   },
+  /*
   "bluetooth": {
     "format": "",
     "format-disabled": "󰂲",
@@ -95,9 +98,10 @@
     "tooltip-format": "Devices connected: {num_connections}",
     "on-click": "blueberry"
   },
+  */
   "pulseaudio": {
     "format": "{icon}",
-    "on-click": "xdg-terminal-exec --app-id=com.omarchy.Wiremix -e wiremix",
+    "on-click": "xdg-terminal-exec --app-id=my.tui.popup -e wiremix",
     "on-click-right": "pamixer -t",
     "tooltip-format": "Playing at {volume}%",
     "scroll-step": 5,
@@ -124,6 +128,21 @@
   "custom/expand-icon": {
     "format": "",
     "tooltip": false
+  },
+  "custom/bluetooth": {
+    "exec": "~/.config/waybar/scripts/bluetooth-toggle.sh",
+    "interval": 5,
+    "on-click": "~/.config/waybar/scripts/bluetooth-toggle.sh toggle"
+  },
+  "custom/btconnect": {
+    "exec": "~/.config/waybar/scripts/bluetooth-connect.sh",
+    "interval": 10,
+    "on-click": "~/.config/waybar/scripts/bluetooth-connect.sh toggle"
+  },
+  "custom/vpn": {
+    "exec": "~/.config/waybar/scripts/vpn.sh",
+    "interval": 10,
+    "on-click": "~/.config/waybar/scripts/vpn.sh toggle"
   },
   "tray": {
     "icon-size": 12,

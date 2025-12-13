@@ -347,8 +347,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="com.mitchellh.ghostty"
-    match title="TUI"
+    match app-id="my.tui.popup"
     open-floating true
     open-focused true
     default-column-width { proportion 0.75; }
