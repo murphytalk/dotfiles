@@ -168,6 +168,7 @@ cursor {
 
 spawn-at-startup "waybar"
 spawn-sh-at-startup "swaybg -o HDMI-A-5 -i ~/wallpapers/Elfwood.png -o DP-3  -i ~/wallpapers/APEX-01.png"
+spawn-sh-at-startup "~/.config/niri/idle.sh"
 
 prefer-no-csd
 
@@ -350,8 +351,8 @@ window-rule {
     match app-id="my.tui.popup"
     open-floating true
     open-focused true
-    default-column-width { proportion 0.75; }
-    default-window-height { fixed 500; }
+    default-column-width { proportion 0.66; }
+    default-window-height { proportion 0.66; }
 }
 
 
