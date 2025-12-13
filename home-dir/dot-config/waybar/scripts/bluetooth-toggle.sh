@@ -5,10 +5,10 @@ if [ "$status" = "yes" ]; then
   if [ ! -z "$toggle" ]; then
     bluetoothctl power off
   fi
-  echo ""
+  printf '{"text":"%s","tooltip":"%s"}\n' "" "Bluetooth: On"
 else
   if [ ! -z "$toggle" ]; then
     bluetoothctl power on
   fi
-  echo "󰂲"
+  printf '{"text":"%s","tooltip":"%s"}\n' "󰂲" "Bluetooth: Off"
 fi

@@ -1,6 +1,7 @@
 #!/bin/bash
 toggle=$1
 DEVICE="00:02:3C:29:3C:98" # Createive D200
+DEVICE_NAME="Creative D200"
 
 on_off=$(bluetoothctl info $DEVICE | grep 'Connected:' | sed 's/.*C.*: *\(.*\)$/\1/g')
 if [ "$on_off" = "no" ]; then
@@ -19,10 +20,10 @@ if [ "$on_off" = "no" ]; then
   if [ ! -z "$toggle" ]; then
     notify-send "Bluetooth Speaker" " Disconnected"
   fi
-  echo "󰓄"
+  printf '{"text":"%s","tooltip":"%s: %s"}\n' "󰓄" "$DEVICE_NAME" "Disconnected"
 else
   if [ ! -z "$toggle" ]; then
     notify-send "Bluetooth Speaker" " Connected"
   fi
-  echo "󰦢"
+  printf '{"text":"%s","tooltip":"%s: %s"}\n' "󰦢" "$DEVICE_NAME" "Connected"
 fi

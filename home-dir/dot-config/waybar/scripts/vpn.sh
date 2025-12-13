@@ -12,8 +12,8 @@ else
 fi
 
 if [ "$on" = "yes" ]; then
-    echo ""
+    printf '{"text":"%s","tooltip":"%s"}\n' "" "VPN: On"
 else
-    echo ""
+    printf '{"text":"%s","tooltip":"%s"}\n' "" "VPN: Off"
 fi
 
