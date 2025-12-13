@@ -356,6 +356,12 @@ window-rule {
 
 
 window-rule {
+    match app-id="foot"
+    open-maximized true
+    opacity 0.95
+}
+
+window-rule {
     match app-id="com.mitchellh.ghostty"
     open-maximized true
     opacity 0.95
@@ -500,7 +506,7 @@ binds {
 
     Mod+T { spawn "st"; }
     Mod+Q { spawn "msedge"; }
-    Ctrl+Alt+C { spawn "ghostty"; }
+    Ctrl+Alt+C { spawn "foot"; }
     // Alt+Space { spawn "~/.config/hypr/bemenu.sh"; }
     Mod+Ctrl+Alt+S { spawn-sh "sudo systemctl suspend";}
    
