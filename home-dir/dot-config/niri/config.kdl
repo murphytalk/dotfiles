@@ -43,7 +43,7 @@ input {
     }
 
     // disable-power-key-handling
-    // warp-mouse-to-focus
+    warp-mouse-to-focus
     // focus-follows-mouse
     // workspace-auto-back-and-forth
 }
@@ -56,14 +56,14 @@ output "winit" {
 }
 
 
-output "HDMI-A-5" {
+output "DP-4" {
     // off
-    // scale 2.0
+    scale 1.0
     // transform "90"
 
     // position x=-1920 y=520
     // position x=2560 y=0
-    position x=-1920 y=0
+    position x=-3840 y=0
 
     // position x=1280 y=-640
     // mode "2560x1440@143.912"
@@ -167,7 +167,7 @@ cursor {
 }
 
 spawn-at-startup "waybar"
-spawn-sh-at-startup "swaybg -o HDMI-A-5 -i ~/wallpapers/Elfwood.png -o DP-3  -i ~/wallpapers/APEX-01.png"
+spawn-sh-at-startup "swaybg -o DP-4 -i ~/wallpapers/blackhole.jpg -o DP-3  -i ~/wallpapers/APEX-01.png"
 spawn-sh-at-startup "~/.config/niri/idle.sh"
 
 prefer-no-csd
@@ -507,7 +507,7 @@ binds {
    
     Mod+Ctrl+Alt+W { spawn "sh" "-c" "st -e ~/work/home-server/vpn/wireguard/wireguard.sh";}
     Ctrl+Alt+K { spawn "~/.config/niri/IKBR.sh";}
-    Ctrl+Alt+I { spawn "~/.config/niri/SWB.sh";}
+    Ctrl+Alt+T { spawn "~/.config/niri/SWB.sh";}
     Ctrl+Alt+L { spawn "~/.config/niri/NOTE.sh";}
     // Mod+Return { spawn "~/arst"; }
     // Mod+T { spawn "flatpak" "run" "org.gnome.Ptyxis.Devel" "-s"; }
