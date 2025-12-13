@@ -1,0 +1,4 @@
+[mgr]
+prepend_keymap = [
+	{ on = ["f"], run = "cd ~/work/finance_scraper", desc = "Go to finance scraper directory" },
+]
