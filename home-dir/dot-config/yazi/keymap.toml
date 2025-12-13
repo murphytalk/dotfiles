@@ -1,4 +1,15 @@
 [mgr]
 prepend_keymap = [
-	{ on = ["f"], run = "cd ~/work/finance_scraper", desc = "Go to finance scraper directory" },
+  { on = [
+    "g",
+    "w",
+  ], run = "cd ~/work", desc = "Go to WORK" },
+  { on = [
+    "g",
+    "s",
+  ], run = "cd /mnt/stock", desc = "Go to STUFF" },
+  { on = [
+    "g",
+    "n",
+  ], run = "cd /mnt/nas", desc = "Go to NAS" },
 ]
