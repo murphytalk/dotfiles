@@ -506,7 +506,7 @@ binds {
 
     Mod+T { spawn "st"; }
     Mod+Q { spawn "msedge"; }
-    Ctrl+Alt+C { spawn "foot"; }
+    Ctrl+Alt+C { spawn "~/.config/niri/toggle-term.sh"; }
     // Alt+Space { spawn "~/.config/hypr/bemenu.sh"; }
     Mod+Ctrl+Alt+S { spawn-sh "sudo systemctl suspend";}
    
