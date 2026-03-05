@@ -28,13 +28,13 @@ pkill swayidle 2>/dev/null
 
 # Build arguments array
 args=(-w timeout 600 'swaylock')
-args+=(timeout 900 'wlopm --off *')
+args+=(timeout 900 'niri msg action power-off-monitors')
 
 if [[ "$no_sleep" == "false" ]]; then
   args+=(timeout 1200 'sudo systemctl suspend')
 fi
 
-args+=(resume 'wlopm --on *')
+args+=(resume 'niri msg action power-on-monitors')
 args+=(before-sleep 'swaylock')
 
 if [[ "$run_in_background" == "true" ]]; then

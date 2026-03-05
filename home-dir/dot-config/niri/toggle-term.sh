@@ -1,6 +1,6 @@
 #!/bin/bash
-APP_CLASS="foot"
-APP_CMD="foot"
+APP_CLASS="com.mitchellh.ghostty"
+APP_CMD="ghostty"
 
 # Find window by app_id (class)
 # We pick the one with the highest focus_timestamp (most recently focused)

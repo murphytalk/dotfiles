@@ -378,6 +378,10 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    match app-id="pcmanfm"
+    open-floating true
+}
 
 /-window-rule {
     match app-id="code"
