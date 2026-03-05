@@ -1,0 +1,6 @@
+{
+  "enabledPlugins": {
+    "claude-mem@thedotmack": true,
+    "pyright-lsp@claude-plugins-official": true
+  }
+}

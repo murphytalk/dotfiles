@@ -55,6 +55,9 @@ function gemini-glow
     gemini | glow
 end
 
+# MS edge mouse jump when hovering over hyperlink
+set -gx ELECTRON_OZONE_PLATFORM_HINT auto
+
 alias p='fzf --preview "bat --color=always {}"'
 zoxide init fish | source
 #oh-my-posh init fish | source
@@ -81,7 +84,7 @@ set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
 if status is-interactive
-    if not set -q TMUX; and string match -qr "ghostty|foot" $TERM 
+    if not set -q TMUX; and string match -qr "ghostty|foot" $TERM
         if not pgrep -x st /dev/null
             if tmux has-session 2>/dev/null
                 exec tmux attach
