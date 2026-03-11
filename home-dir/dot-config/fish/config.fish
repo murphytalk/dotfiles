@@ -94,3 +94,6 @@ if status is-interactive
         end
     end
 end
+
+# opencode
+fish_add_path /home/mu/.opencode/bin
