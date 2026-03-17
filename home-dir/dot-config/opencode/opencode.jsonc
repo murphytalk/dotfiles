@@ -6,6 +6,7 @@
     "webfetch": "allow"
   },
   "plugin": [
-    "opencode-skills"
+    "opencode-skills",
+    "opencode-mem"
   ]
 }
