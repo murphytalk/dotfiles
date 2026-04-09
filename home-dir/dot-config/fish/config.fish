@@ -84,7 +84,7 @@ set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
 if status is-interactive
-    if not set -q TMUX; and string match -qr "ghostty|foot" $TERM
+    if not set -q TMUX; and string match -qr "ghostty|foot|xterm-256color" $TERM
         if not pgrep -x st /dev/null
             if tmux has-session 2>/dev/null
                 exec tmux attach
@@ -94,3 +94,26 @@ if status is-interactive
         end
     end
 end
+
+# opencode
+fish_add_path /home/mu/.opencode/bin
+
+# homebrew
+set --global --export HOMEBREW_PREFIX "/home/linuxbrew/.linuxbrew"
+
+set --global --export HOMEBREW_CELLAR "/home/linuxbrew/.linuxbrew/Cellar"
+
+set --global --export HOMEBREW_REPOSITORY "/home/linuxbrew/.linuxbrew/Homebrew"
+
+fish_add_path --global --move --path "/home/linuxbrew/.linuxbrew/bin" "/home/linuxbrew/.linuxbrew/sbin"
+
+if test -n "$MANPATH[1]"
+    set --global --export MANPATH '' $MANPATH
+end
+
+if not contains "/home/linuxbrew/.linuxbrew/share/info" $INFOPATH
+    set --global --export INFOPATH "/home/linuxbrew/.linuxbrew/share/info" $INFOPATH
+end
+
+# OpenClaw Completion
+source "/home/mu/.openclaw/completions/openclaw.fish"

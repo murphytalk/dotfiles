@@ -1,1 +1,0 @@
-../../../../../home-dir/dot-config/nvim/lua/my-nvim/remap.lua
