@@ -77,6 +77,8 @@ set -x FILE_MANAGER spacefm
 alias open="xdg-open"
 
 set XMODIFIERS @im=fcitx
+set -x GTK_IM_MODULE fcitx
+set -x QT_IM_MODULE fcitx
 #set TERM xterm-256color
 
 # bun
@@ -116,4 +118,6 @@ if not contains "/home/linuxbrew/.linuxbrew/share/info" $INFOPATH
 end
 
 # OpenClaw Completion
-source "/home/mu/.openclaw/completions/openclaw.fish"
+if test -d "$HOME/.openclaw"
+    source "$HOME/.openclaw/completions/openclaw.fish"
+end

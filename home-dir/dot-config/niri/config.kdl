@@ -176,6 +176,9 @@ prefer-no-csd
 environment {
     // GSK_RENDERER "cairo"
     // WAYLAND_DISPLAY null
+    GTK_IM_MODULE "fcitx"
+    QT_IM_MODULE "fcitx"
+    XMODIFIERS "@im=fcitx"
 }
 
 // screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
