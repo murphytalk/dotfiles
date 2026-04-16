@@ -1,0 +1,141 @@
+{
+  "providers": {
+    "windsurf": {
+      "baseUrl": "http://localhost:3003/v1",
+      "api": "openai-completions",
+      "apiKey": "windsurf",
+      "models": [
+        {
+          "id": "claude-opus-4.6"
+        },
+        {
+          "id": "claude-opus-4.7-high"
+        }
+      ]
+    },
+    "nv": {
+      "baseUrl": "https://integrate.api.nvidia.com/v1/",
+      "api": "openai-completions",
+      "apiKey": "nv",
+      "models": [
+        {
+          "id": "deepseek-ai/deepseek-v4-pro",
+          "name": "NV DeepSeek V4 Pro",
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "input": [
+            "text"
+          ],
+          "reasoning": true,
+          "compat": {
+            "requiresReasoningContentOnAssistantMessages": true,
+            "thinkingFormat": "deepseek",
+            "reasoningEffortMap": {
+              "minimal": "high",
+              "low": "high",
+              "medium": "high",
+              "high": "high",
+              "xhigh": "max"
+            }
+          }
+        },
+        {
+          "id": "deepseek-ai/deepseek-v4-flash",
+          "name": "NV DeepSeek V4 Flash",
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "input": [
+            "text"
+          ],
+          "reasoning": true,
+          "compat": {
+            "requiresReasoningContentOnAssistantMessages": true,
+            "thinkingFormat": "deepseek",
+            "reasoningEffortMap": {
+              "minimal": "high",
+              "low": "high",
+              "medium": "high",
+              "high": "high",
+              "xhigh": "max"
+            }
+          }
+        }
+      ]
+    },
+    "deepseek": {
+      "baseUrl": "https://api.deepseek.com",
+      "api": "openai-completions",
+      "apiKey": "deepseek",
+      "models": [
+        {
+          "id": "deepseek-v4-pro",
+          "name": "DeepSeek V4 Pro",
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "input": [
+            "text"
+          ],
+          "reasoning": true,
+          "cost": {
+            "input": 1.74,
+            "output": 3.48,
+            "cacheRead": 0.145,
+            "cacheWrite": 0
+          },
+          "compat": {
+            "requiresReasoningContentOnAssistantMessages": true,
+            "thinkingFormat": "deepseek",
+            "reasoningEffortMap": {
+              "minimal": "high",
+              "low": "high",
+              "medium": "high",
+              "high": "high",
+              "xhigh": "max"
+            }
+          }
+        },
+        {
+          "id": "deepseek-v4-flash",
+          "name": "DeepSeek V4 Flash",
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "input": [
+            "text"
+          ],
+          "reasoning": true,
+          "cost": {
+            "input": 0.14,
+            "output": 0.28,
+            "cacheRead": 0.028,
+            "cacheWrite": 0
+          },
+          "compat": {
+            "requiresReasoningContentOnAssistantMessages": true,
+            "thinkingFormat": "deepseek",
+            "reasoningEffortMap": {
+              "minimal": "high",
+              "low": "high",
+              "medium": "high",
+              "high": "high",
+              "xhigh": "max"
+            }
+          }
+        }
+      ]
+    },
+    "Aliyun": {
+      "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "api": "openai-completions",
+      "apiKey": "***",
+      "models": [
+        {
+          "id": "qwen-coder-turbo-0919",
+          "name": "qwen-coder-turbo-0919",
+          "input": [
+            "text"
+          ]
+        }
+      ]
+    }
+  }
+}

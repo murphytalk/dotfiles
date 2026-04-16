@@ -1,0 +1,39 @@
+{
+  "lastChangelogVersion": "0.78.0",
+  "defaultProvider": "deepseek",
+  "defaultModel": "deepseek-v4-flash",
+  "defaultThinkingLevel": "medium",
+  "packages": [
+    "npm:pi-subagents",
+    "npm:pi-intercom",
+    "npm:pi-web-access"
+  ],
+  "subagents": {
+    "agentOverrides": {
+      "reviewer": {
+        "model": "deepseek/deepseek-v4-pro",
+        "thinking": "high"
+      },
+      "oracle": {
+        "model": "deepseek/deepseek-v4-pro",
+        "thinking": "high"
+      },
+      "planner": {
+        "model": "deepseek/deepseek-v4-pro",
+        "thinking": "high"
+      },
+      "researcher": {
+        "model": "deepseek/deepseek-v4-flash",
+        "thinking": "medium"
+      },
+      "scout": {
+        "model": "deepseek/deepseek-v4-flash",
+        "thinking": "low"
+      },
+      "worker": {
+        "model": "deepseek/deepseek-v4-flash",
+        "thinking": "medium"
+      }
+    }
+  }
+}
