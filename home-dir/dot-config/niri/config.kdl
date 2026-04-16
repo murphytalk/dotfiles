@@ -179,6 +179,7 @@ environment {
     GTK_IM_MODULE "fcitx"
     QT_IM_MODULE "fcitx"
     XMODIFIERS "@im=fcitx"
+    GLFW_IM_MODULE "ibus"
 }
 
 // screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
@@ -378,6 +379,11 @@ window-rule {
 window-rule {
     match app-id="Spacefm"
     match app-id="org.pulseaudio.pavucontrol"
+    open-floating true
+}
+
+window-rule {
+    match app-id="mpv"
     open-floating true
 }
 
