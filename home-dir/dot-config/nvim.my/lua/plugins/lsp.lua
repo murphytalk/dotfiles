@@ -146,6 +146,15 @@ return { -- LSP Configuration & Plugins
       virtual_lines = {
         current_line = true,
       },
+      filters = {
+        ["*.md"] = {
+          {
+            -- 屏蔽 markdownlint-cli2 的 MD022/MD024/MD033 等警告
+            source = { name = "markdownlint-cli2" },
+            message = { "%[MD022%]%]%s", "%[MD024%]%]%s", "%[MD033%]%]%s", "%[MD032%]%]%s" },
+          },
+        },
+      },
     })
 
     -- LSP servers and clients are able to communicate to each other what features they support.
