@@ -1,22 +1,35 @@
 #!/bin/bash
 toggle=$1
-DEVICE="00:02:3C:29:3C:98" # Createive D200
+DEVICE="00:02:3C:29:3C:98" # Creative D200
 DEVICE_NAME="Creative D200"
 
-on_off=$(bluetoothctl info $DEVICE | grep 'Connected:' | sed 's/.*C.*: *\(.*\)$/\1/g')
-if [ "$on_off" = "no" ]; then
+device_sink="bluez_output.00_02_3C_29_3C_98.1"
+
+if pactl list short sinks 2>/dev/null | grep -q "$device_sink"; then
+  on_off="yes"
+else
+  on_off="no"
+fi
+
+if [ "$on_off" != "yes" ]; then
   cmd=connect
 else
   cmd=disconnect
 fi
 
 if [ ! -z "$toggle" ]; then
-  notify-send "Bluetooth Speaker" "$cmd"ting
-  bluetoothctl $cmd $DEVICE >/dev/null
+  notify-send "Bluetooth Speaker" "${cmd}ing"
+  bluetoothctl $cmd $DEVICE >/dev/null 2>&1
 fi
 
-on_off=$(bluetoothctl info $DEVICE | grep 'Connected:' | sed 's/.*C.*: *\(.*\)$/\1/g')
-if [ "$on_off" = "no" ]; then
+device_sink="bluez_output.00_02_3C_29_3C_98.1"
+if pactl list short sinks 2>/dev/null | grep -q "$device_sink"; then
+  on_off="yes"
+else
+  on_off="no"
+fi
+
+if [ "$on_off" != "yes" ]; then
   if [ ! -z "$toggle" ]; then
     notify-send "Bluetooth Speaker" " Disconnected"
   fi
