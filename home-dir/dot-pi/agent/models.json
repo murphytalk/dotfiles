@@ -13,52 +13,22 @@
         }
       ]
     },
-    "nv": {
-      "baseUrl": "https://integrate.api.nvidia.com/v1/",
+    "kimi": {
+      "baseUrl": "https://api.moonshot.cn/v1",
       "api": "openai-completions",
-      "apiKey": "nv",
+      "apiKey": "kimi",
       "models": [
         {
-          "id": "deepseek-ai/deepseek-v4-pro",
-          "name": "NV DeepSeek V4 Pro",
-          "contextWindow": 1000000,
-          "maxTokens": 384000,
-          "input": [
-            "text"
-          ],
-          "reasoning": true,
-          "compat": {
-            "requiresReasoningContentOnAssistantMessages": true,
-            "thinkingFormat": "deepseek",
-            "reasoningEffortMap": {
-              "minimal": "high",
-              "low": "high",
-              "medium": "high",
-              "high": "high",
-              "xhigh": "max"
-            }
-          }
+          "id": "kimi-k3",
+          "name": "kimi-k3"
         },
         {
-          "id": "deepseek-ai/deepseek-v4-flash",
-          "name": "NV DeepSeek V4 Flash",
-          "contextWindow": 1000000,
-          "maxTokens": 384000,
-          "input": [
-            "text"
-          ],
-          "reasoning": true,
-          "compat": {
-            "requiresReasoningContentOnAssistantMessages": true,
-            "thinkingFormat": "deepseek",
-            "reasoningEffortMap": {
-              "minimal": "high",
-              "low": "high",
-              "medium": "high",
-              "high": "high",
-              "xhigh": "max"
-            }
-          }
+          "id": "kimi-k2.6",
+          "name": "kimi-k2.6"
+        },
+        {
+          "id": "kimi-k2.7-code",
+          "name": "kimi-k2.7-code"
         }
       ]
     },

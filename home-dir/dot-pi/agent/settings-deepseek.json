@@ -1,0 +1,59 @@
+{
+  "lastChangelogVersion": "0.80.10",
+  "defaultProvider": "deepseek",
+  "defaultModel": "deepseek-v4-flash",
+  "defaultThinkingLevel": "high",
+  "packages": [
+    "npm:pi-subagents",
+    "npm:pi-intercom",
+    "npm:pi-web-access",
+    "npm:pi-nvidia-nim"
+  ],
+  "subagents": {
+    "agentOverrides": {
+      "reviewer": {
+        "model": "nvidia-nim/deepseek-ai/deepseek-v4-pro",
+        "thinking": "high",
+        "fallbackModels": [
+          "deepseek/deepseek-v4-pro"
+        ]
+      },
+      "oracle": {
+        "model": "nvidia-nim/deepseek-ai/deepseek-v4-pro",
+        "thinking": "high",
+        "fallbackModels": [
+          "deepseek/deepseek-v4-pro"
+        ]
+      },
+      "planner": {
+        "model": "nvidia-nim/deepseek-ai/deepseek-v4-pro",
+        "thinking": "high",
+        "fallbackModels": [
+          "deepseek/deepseek-v4-pro"
+        ]
+      },
+      "researcher": {
+        "model": "nvidia-nim/deepseek-ai/deepseek-v4-flash",
+        "thinking": "medium",
+        "fallbackModels": [
+          "deepseek/deepseek-v4-flash"
+        ]
+      },
+      "scout": {
+        "model": "nvidia-nim/deepseek-ai/deepseek-v4-flash",
+        "thinking": "low",
+        "fallbackModels": [
+          "deepseek/deepseek-v4-flash"
+        ]
+      },
+      "worker": {
+        "model": "nvidia-nim/deepseek-ai/deepseek-v4-flash",
+        "thinking": "medium",
+        "fallbackModels": [
+          "deepseek/deepseek-v4-flash"
+        ]
+      }
+    }
+  },
+  "theme": "dark"
+}
