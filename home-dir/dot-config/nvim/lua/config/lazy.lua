@@ -14,6 +14,9 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- 使用 basedpyright 代替 pyright作为 Python LSP
+vim.g.lazyvim_python_lsp = "basedpyright"
+
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
