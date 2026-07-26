@@ -9,6 +9,8 @@ Generates or updates the project's `dev-log.md` with a summary of today's work.
 
 ## Usage
 
+**When reading the existing dev-log.md, only read the first 20 lines at most** (the file grows over time; avoid wasting context).
+
 Ask pi to generate a dev log entry. The agent will:
 
 1. Determine today's date (YYYY-MM-DD format)

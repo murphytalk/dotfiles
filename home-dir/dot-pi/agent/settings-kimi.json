@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.80.10",
+  "lastChangelogVersion": "0.82.1",
   "defaultProvider": "deepseek",
   "defaultModel": "deepseek-v4-flash",
   "defaultThinkingLevel": "medium",
@@ -16,36 +16,24 @@
         "thinking": "high"
       },
       "oracle": {
-        "model": "nvidia-nim/deepseek-ai/deepseek-v4-pro",
-        "thinking": "high",
-        "fallbackModels": [
-          "deepseek/deepseek-v4-pro"
-        ]
+        "model": "deepseek/deepseek-v4-pro",
+        "thinking": "high"
       },
       "planner": {
         "model": "kimi/kimi-k3",
         "thinking": "high"
       },
       "researcher": {
-        "model": "nvidia-nim/deepseek-ai/deepseek-v4-flash",
-        "thinking": "medium",
-        "fallbackModels": [
-          "deepseek/deepseek-v4-flash"
-        ]
+        "model": "deepseek/deepseek-v4-flash",
+        "thinking": "medium"
       },
       "scout": {
-        "model": "nvidia-nim/deepseek-ai/deepseek-v4-flash",
-        "thinking": "low",
-        "fallbackModels": [
-          "deepseek/deepseek-v4-flash"
-        ]
+        "model": "deepseek/deepseek-v4-flash",
+        "thinking": "low"
       },
       "worker": {
-        "model": "nvidia-nim/deepseek-ai/deepseek-v4-flash",
-        "thinking": "medium",
-        "fallbackModels": [
-          "deepseek/deepseek-v4-flash"
-        ]
+        "model": "deepseek/deepseek-v4-flash",
+        "thinking": "medium"
       }
     }
   },

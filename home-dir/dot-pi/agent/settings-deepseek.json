@@ -1,8 +1,8 @@
 {
-  "lastChangelogVersion": "0.80.10",
+  "lastChangelogVersion": "0.82.1",
   "defaultProvider": "deepseek",
   "defaultModel": "deepseek-v4-flash",
-  "defaultThinkingLevel": "high",
+  "defaultThinkingLevel": "medium",
   "packages": [
     "npm:pi-subagents",
     "npm:pi-intercom",
@@ -12,11 +12,8 @@
   "subagents": {
     "agentOverrides": {
       "reviewer": {
-        "model": "nvidia-nim/deepseek-ai/deepseek-v4-pro",
-        "thinking": "high",
-        "fallbackModels": [
-          "deepseek/deepseek-v4-pro"
-        ]
+        "model": "kimi/kimi-k3",
+        "thinking": "high"
       },
       "oracle": {
         "model": "nvidia-nim/deepseek-ai/deepseek-v4-pro",
@@ -26,11 +23,8 @@
         ]
       },
       "planner": {
-        "model": "nvidia-nim/deepseek-ai/deepseek-v4-pro",
-        "thinking": "high",
-        "fallbackModels": [
-          "deepseek/deepseek-v4-pro"
-        ]
+        "model": "kimi/kimi-k3",
+        "thinking": "high"
       },
       "researcher": {
         "model": "nvidia-nim/deepseek-ai/deepseek-v4-flash",

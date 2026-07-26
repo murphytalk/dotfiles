@@ -96,7 +96,12 @@ if status is-interactive
         end
     end
 end
-
+#if status is-interactive
+#    if not set -q HERDR_ENV
+#        and string match -qr "ghostty|foot" $TERM
+#        exec herdr
+#    end
+#end
 # opencode
 fish_add_path /home/mu/.opencode/bin
 
