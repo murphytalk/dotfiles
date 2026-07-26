@@ -520,6 +520,9 @@ binds {
     Mod+T { spawn "st"; }
     Mod+Q { spawn "msedge"; }
     Ctrl+Alt+C { spawn "~/.config/niri/toggle-term.sh"; }
+    Ctrl+Alt+V { spawn "~/.config/niri/toggle-nvim.sh"; }
+    //Ctrl+Alt+C { spawn "~/.config/niri/toggle-app.sh --app-id com.mitchellh.ghostty --cmd ghostty";}
+    //Ctrl+Alt+V { spawn "~/.config/niri/toggle-app.sh --title nvim --cmd nvim";}
     // Alt+Space { spawn "~/.config/hypr/bemenu.sh"; }
     Mod+Ctrl+Alt+S { spawn-sh "sudo systemctl suspend";}
    
