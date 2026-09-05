@@ -1,7 +1,7 @@
 {
   "providers": {
     "windsurf": {
-      "baseUrl": "http://localhost:3003/v1",
+      "baseUrl": "http://router.lan:3003/v1",
       "api": "openai-completions",
       "apiKey": "windsurf",
       "models": [
@@ -14,74 +14,13 @@
       ]
     },
     "freellm": {
-      "baseUrl": "http://localhost:3001/v1",
+      "baseUrl": "http://router.lan:3001/v1",
       "api": "openai-completions",
       "apiKey": "freellm",
       "models": [
         {
           "id": "auto",
           "name": "auto"
-        }
-      ]
-    },
-    "deepseek": {
-      "baseUrl": "https://api.deepseek.com",
-      "api": "openai-completions",
-      "apiKey": "deepseek",
-      "models": [
-        {
-          "id": "deepseek-v4-pro",
-          "name": "DeepSeek V4 Pro",
-          "contextWindow": 1000000,
-          "maxTokens": 384000,
-          "input": [
-            "text"
-          ],
-          "reasoning": true,
-          "cost": {
-            "input": 1.74,
-            "output": 3.48,
-            "cacheRead": 0.145,
-            "cacheWrite": 0
-          },
-          "compat": {
-            "requiresReasoningContentOnAssistantMessages": true,
-            "thinkingFormat": "deepseek",
-            "reasoningEffortMap": {
-              "minimal": "high",
-              "low": "high",
-              "medium": "high",
-              "high": "high",
-              "xhigh": "max"
-            }
-          }
-        },
-        {
-          "id": "deepseek-v4-flash",
-          "name": "DeepSeek V4 Flash",
-          "contextWindow": 1000000,
-          "maxTokens": 384000,
-          "input": [
-            "text"
-          ],
-          "reasoning": true,
-          "cost": {
-            "input": 0.14,
-            "output": 0.28,
-            "cacheRead": 0.028,
-            "cacheWrite": 0
-          },
-          "compat": {
-            "requiresReasoningContentOnAssistantMessages": true,
-            "thinkingFormat": "deepseek",
-            "reasoningEffortMap": {
-              "minimal": "high",
-              "low": "high",
-              "medium": "high",
-              "high": "high",
-              "xhigh": "max"
-            }
-          }
         }
       ]
     }

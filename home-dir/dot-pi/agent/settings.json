@@ -1,1 +1,69 @@
-settings-deepseek.json
+{
+  "lastChangelogVersion": "0.85.1",
+  "defaultProvider": "freellm",
+  "defaultModel": "auto",
+  "defaultThinkingLevel": "medium",
+  "packages": [
+    "npm:pi-subagents",
+    "npm:pi-intercom",
+    "npm:pi-web-access",
+    "npm:pi-nvidia-nim",
+    "npm:pi-ultra-compact",
+    "npm:pi-alibaba-models",
+    "git:github.com/fengfanfan-max/pi-agent-backup-migrate",
+    "git:github.com/DietrichGebert/ponytail"
+  ],
+  "subagents": {
+    "agentOverrides": {
+      "reviewer": {
+        "model": "deepseek/deepseek-v4-pro",
+        "thinking": "high"
+      },
+      "oracle": {
+        "model": "deepseek/deepseek-v4-pro",
+        "thinking": "high"
+      },
+      "delegate": {
+        "thinking": "high"
+      },
+      "researcher": {
+        "model": "alibaba-cloud/qwen3.7-flash",
+        "thinking": "medium"
+      },
+      "worker": {
+        "thinking": "medium"
+      },
+      "scout": {
+        "thinking": "low"
+      },
+      "agentOverridesByProvider": {
+        "freellm": {
+          "worker": {
+            "model": "freellm/auto"
+          },
+          "scout": {
+            "worker": {
+              "model": "freellm/auto"
+            }
+          }
+        },
+        "moonshotai-cn": {
+          "delegate": {
+            "model": "moonshotai-cn/kimi-k3"
+          }
+        },
+        "alibaba-cloud": {
+          "delegate": {
+            "model": "alibaba-cloud/qwen3.7-plus"
+          }
+        },
+        "openrouter": {
+          "worker": {
+            "model": "openrouter/deepseek/deepseek-v4-flash-0731"
+          }
+        }
+      }
+    }
+  },
+  "theme": "dark"
+}
