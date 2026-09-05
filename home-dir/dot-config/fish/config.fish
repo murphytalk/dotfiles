@@ -103,7 +103,7 @@ end
 #    end
 #end
 # opencode
-fish_add_path /home/mu/.opencode/bin
+#fish_add_path /home/mu/.opencode/bin
 
 # homebrew
 set --global --export HOMEBREW_PREFIX "/home/linuxbrew/.linuxbrew"
@@ -122,7 +122,8 @@ if not contains "/home/linuxbrew/.linuxbrew/share/info" $INFOPATH
     set --global --export INFOPATH "/home/linuxbrew/.linuxbrew/share/info" $INFOPATH
 end
 
-# OpenClaw Completion
-if test -d "$HOME/.openclaw"
-    source "$HOME/.openclaw/completions/openclaw.fish"
-end
+set -x NO_TELEGRAM_ALERT y
+
+# Qwen Code PATH block begin
+set -gx PATH '/home/mu/.local/bin' $PATH
+# Qwen Code PATH block end
