@@ -13,22 +13,14 @@
         }
       ]
     },
-    "kimi": {
-      "baseUrl": "https://api.moonshot.cn/v1",
+    "freellm": {
+      "baseUrl": "http://localhost:3001/v1",
       "api": "openai-completions",
-      "apiKey": "kimi",
+      "apiKey": "freellm",
       "models": [
         {
-          "id": "kimi-k3",
-          "name": "kimi-k3"
-        },
-        {
-          "id": "kimi-k2.6",
-          "name": "kimi-k2.6"
-        },
-        {
-          "id": "kimi-k2.7-code",
-          "name": "kimi-k2.7-code"
+          "id": "auto",
+          "name": "auto"
         }
       ]
     },
@@ -90,20 +82,6 @@
               "xhigh": "max"
             }
           }
-        }
-      ]
-    },
-    "Aliyun": {
-      "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-      "api": "openai-completions",
-      "apiKey": "***",
-      "models": [
-        {
-          "id": "qwen-coder-turbo-0919",
-          "name": "qwen-coder-turbo-0919",
-          "input": [
-            "text"
-          ]
         }
       ]
     }

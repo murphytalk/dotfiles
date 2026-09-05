@@ -7,11 +7,15 @@ description: Review conversation history and generate/update dev-log.md entries 
 
 Generates or updates the project's `dev-log.md` with a summary of today's work.
 
+**All entries MUST be written in English.**
+
 ## Usage
 
 **When reading the existing dev-log.md, only read the first 20 lines at most** (the file grows over time; avoid wasting context).
 
 Ask pi to generate a dev log entry. The agent will:
+
+0. **Ask first, do nothing before**: before ANY operation — reading `dev-log.md`, extracting existing items, summarizing the conversation, or writing — ask the user whether the dev log may be written/updated (e.g. "可以提交 dev log 吗？"). Do not read the log, do not draft, do not summarize anything until the user explicitly confirms. If the user declines or doesn't respond, do not perform any dev-log work at all.
 
 1. Determine today's date (YYYY-MM-DD format)
 2. Read the existing `dev-log.md` from the project root if it exists
