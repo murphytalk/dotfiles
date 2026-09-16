@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.85.1",
-  "defaultProvider": "freellm",
-  "defaultModel": "auto",
+  "defaultProvider": "deepseek",
+  "defaultModel": "deepseek-flash",
   "defaultThinkingLevel": "medium",
   "packages": [
     "npm:pi-subagents",
@@ -16,7 +16,7 @@
   "subagents": {
     "agentOverrides": {
       "reviewer": {
-        "model": "deepseek/deepseek-v4-pro",
+        "model": "alibaba-cloud/qwen3.7-plus",
         "thinking": "high"
       },
       "oracle": {
@@ -24,6 +24,7 @@
         "thinking": "high"
       },
       "delegate": {
+        "model": "moonshotai-cn/kimi-k3",
         "thinking": "high"
       },
       "researcher": {
@@ -31,37 +32,12 @@
         "thinking": "medium"
       },
       "worker": {
+        "model": "deepseek/deepseek-flash",
         "thinking": "medium"
       },
       "scout": {
+        "model": "freellm/auto",
         "thinking": "low"
-      },
-      "agentOverridesByProvider": {
-        "freellm": {
-          "worker": {
-            "model": "freellm/auto"
-          },
-          "scout": {
-            "worker": {
-              "model": "freellm/auto"
-            }
-          }
-        },
-        "moonshotai-cn": {
-          "delegate": {
-            "model": "moonshotai-cn/kimi-k3"
-          }
-        },
-        "alibaba-cloud": {
-          "delegate": {
-            "model": "alibaba-cloud/qwen3.7-plus"
-          }
-        },
-        "openrouter": {
-          "worker": {
-            "model": "openrouter/deepseek/deepseek-v4-flash-0731"
-          }
-        }
       }
     }
   },
