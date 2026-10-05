@@ -1,0 +1,66 @@
+{
+  "scout": [
+    {
+      "model": "freellm/auto",
+      "thinking": "low"
+    }
+  ],
+  "researcher": [
+    {
+      "model": "qwen-token-plan-cn/qwen3.8-flash",
+      "thinking": "medium"
+    },
+    {
+      "model": "alibaba-cloud/qwen3.7-flash",
+      "thinking": "medium"
+    }
+  ],
+  "delegate": [
+    {
+      "model": "qwen-token-plan-cn/qwen3.8-flash",
+      "thinking": "high"
+    },
+    {
+      "model": "kimi/kimi-k3",
+      "thinking": "high"
+    }
+  ],
+  "oracle": [
+    {
+      "model": "qwen-token-plan-cn/qwen3.8-max",
+      "thinking": "high"
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "thinking": "high"
+    },
+    {
+      "model": "kimi/kimi-k3",
+      "thinking": "high"
+    }
+  ],
+  "worker": [
+    {
+      "model": "qwen-token-plan-cn/qwen3.8-flash",
+      "thinking": "medium"
+    },
+    {
+      "model": "deepseek/deepseek-flash",
+      "thinking": "medium"
+    },
+    {
+      "model": "openrouter/deepseek/deepseek-v4-pro",
+      "thinking": "medium"
+    }
+  ],
+  "reviewer": [
+    {
+      "model": "qwen-token-plan-cn/qwen3.7-plus",
+      "thinking": "high"
+    },
+    {
+      "model": "alibaba-cloud/qwen3.7-plus",
+      "thinking": "high"
+    }
+  ]
+}
