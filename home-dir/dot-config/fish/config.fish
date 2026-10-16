@@ -1,3 +1,14 @@
+# PATH hygiene: strip duplicates inherited from nested shells (tmux server env
+# is a frozen snapshot; bashrc/GUI re-append on every level). fish does not
+# deduplicate exported PATH on its own.
+set -l __path_seen
+for p in $PATH
+    if not contains -- $p $__path_seen
+        set -a __path_seen $p
+    end
+end
+set -gx PATH $__path_seen
+
 if test -e $HOME/.alias
     source $HOME/.alias
 end
@@ -42,14 +53,22 @@ function y
     rm -f -- "$tmp"
 end
 
-function f
-    cd ~/work/finance_scraper
-    . venv/bin/activate.fish
-    python -m console.shell
-    deactivate
+
+function J
+    if test -x ./jj-wrapper.sh
+        echo "-> Calling ./jj-wrapper.sh $argv"
+        ./jj-wrapper.sh $argv
+    else
+        echo "-> Calling jj $argv"
+        command jj $argv
+    end
 end
 
-set -gx PATH ~/go/bin ~/.cargo/bin ~/.local/bin/ /home/linuxbrew/.linuxbrew/bin $PATH
+# Unified PATH additions (fish_add_path is idempotent: existing entries are
+# moved, never duplicated). Was previously a non-idempotent `set -gx PATH` that
+# re-prepended on every nested shell.
+fish_add_path --global --move --path ~/go/bin ~/.cargo/bin ~/.local/bin \
+    /home/linuxbrew/.linuxbrew/bin /home/linuxbrew/.linuxbrew/sbin
 
 function gemini-glow
     gemini | glow
@@ -83,7 +102,7 @@ set -x QT_IM_MODULE fcitx
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
+fish_add_path --global --move --path $BUN_INSTALL/bin
 
 if status is-interactive
     if not set -q TMUX; and string match -qr "ghostty|foot" $TERM
@@ -112,7 +131,7 @@ set --global --export HOMEBREW_CELLAR "/home/linuxbrew/.linuxbrew/Cellar"
 
 set --global --export HOMEBREW_REPOSITORY "/home/linuxbrew/.linuxbrew/Homebrew"
 
-fish_add_path --global --move --path "/home/linuxbrew/.linuxbrew/bin" "/home/linuxbrew/.linuxbrew/sbin"
+# (linuxbrew bin/sbin PATH additions live in the unified fish_add_path above)
 
 if test -n "$MANPATH[1]"
     set --global --export MANPATH '' $MANPATH
@@ -124,9 +143,8 @@ end
 
 set -x NO_TELEGRAM_ALERT y
 
-# Qwen Code PATH block begin
-set -gx PATH '/home/mu/.local/bin' $PATH
-# Qwen Code PATH block end
+# Qwen Code PATH block removed: /home/mu/.local/bin is handled by the unified
+# fish_add_path line above (this block re-prepended it on every shell start).
 
 # Pi
 fish_add_path "/home/mu/.pi/agent/bin"
