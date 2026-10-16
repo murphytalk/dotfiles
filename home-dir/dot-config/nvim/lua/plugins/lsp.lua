@@ -9,6 +9,11 @@ return {
         gopls = {
           mason = false,
           cmd = { "gopls" },
+          settings = {
+            gopls = {
+              buildFlags = { "-tags=extension" },
+            },
+          },
         },
       },
       -- 诊断显示: ERROR 红色 inline 始终显示, WARN/HINT 只在光标行浮窗显示
