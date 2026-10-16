@@ -6,6 +6,10 @@ return {
       -- The list of servers to install from mason.
       servers = {
         jinja_lsp = {},
+        gopls = {
+          mason = false,
+          cmd = { "gopls" },
+        },
       },
       -- 诊断显示: ERROR 红色 inline 始终显示, WARN/HINT 只在光标行浮窗显示
       diagnostics = {
@@ -22,7 +26,7 @@ return {
           header = "",
           prefix = "",
           focusable = false,
-          scope = "line",          -- cursor=精确位置, line=整行
+          scope = "line", -- cursor=精确位置, line=整行
           border = "rounded",
         },
       },
