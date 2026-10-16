@@ -49,7 +49,7 @@ function f
     deactivate
 end
 
-set PATH ~/go/bin ~/.cargo/bin ~/.local/bin/ $FLUTTER_HOME/bin $MY_ANDROID_SDK_HOME/platform-tools/ /home/linuxbrew/.linuxbrew/bin $PATH
+set -gx PATH ~/go/bin ~/.cargo/bin ~/.local/bin/ /home/linuxbrew/.linuxbrew/bin $PATH
 
 function gemini-glow
     gemini | glow
@@ -127,3 +127,6 @@ set -x NO_TELEGRAM_ALERT y
 # Qwen Code PATH block begin
 set -gx PATH '/home/mu/.local/bin' $PATH
 # Qwen Code PATH block end
+
+# Pi
+fish_add_path "/home/mu/.pi/agent/bin"
